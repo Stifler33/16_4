@@ -13,7 +13,7 @@ int main() {
         cin >> delta;
         if (delta + speed <= 150) {
             speed += delta;
-            sprintf(text, "Speed %.2f", speed);
+            sprintf(text, "Speed %.1f", speed);
             cout << text << endl;
         }else cout << "over speed !\n";
     }while(!permissibleSpeed(0.01));
