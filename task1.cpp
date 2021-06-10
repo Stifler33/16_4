@@ -17,6 +17,5 @@ int main() {
             cout << text << endl;
         }else cout << "over speed !\n";
     }while(!permissibleSpeed(0.01));
-
     return 0;
 }
