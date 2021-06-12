@@ -10,7 +10,7 @@ int main(){
     double second;
     char sing;
     buffer >> first >> sing >> second;
-    std::cout << first << " " << sing << " " << second << std::endl;
+    //std::cout << first << " " << sing << " " << second << std::endl;
     switch (sing) {
         case'+':
             std::cout << first + second;
