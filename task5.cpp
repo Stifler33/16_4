@@ -17,7 +17,13 @@ bool traffic;
 int kelvin;
 int main(){
     int statusTumbler = 0;
+    stringstream console;
+        string userEnter;
+        getline(cin, userEnter);
+        console << userEnter;
 
+    statusTumbler |= HOUSE;
+    statusTumbler |= SOCKETS;
     if (Cout < 0){
         statusTumbler |= HEAT_WATER;
     }else if (Cout > 5) statusTumbler &= ~HEAT_WATER;
