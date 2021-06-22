@@ -13,7 +13,7 @@ enum tumbler{
 
 float Cout;
 float Cin;
-float time;
+float time = 0;
 int kelvin = 5000;
 string OnOffLHome;
 string OnOffLGarden;
@@ -24,7 +24,10 @@ bool traffic(string &stateTraffic){
         return true;
     }else if (stateTraffic == "no") {
         return false;
-    }else cerr << "Error traffic ! yes or no\n";
+    }else {
+        cerr << "Error traffic ! yes or no\n";
+        return false;
+    }
 }
 void shiftLHome(){
     if (OnOffLHome == "on" && !(statusTumbler & LIGHT_HOME)){
@@ -60,8 +63,7 @@ int main(){
     string userEnter;
     statusTumbler |= HOUSE;
     statusTumbler |= SOCKETS;
-    for (int i = 16; i < 22; i++) {
-        time = i;
+    for (int i = 0; i < 48; i++) {
         getline(cin, userEnter);
         console << userEnter;
         console >> Cout >> Cin >> stateTraffic >> OnOffLHome;
@@ -95,7 +97,7 @@ int main(){
             cout << " OFF Heating ";
             statusTumbler &= ~HEATING;
         }
-        if (Cin > 30 && !(statusTumbler & CONDITIONING)) {
+        if (Cin >= 30 && !(statusTumbler & CONDITIONING)) {
             cout << " ON conditioning ";
             statusTumbler |= CONDITIONING;
         } else if (Cin < 25 && (statusTumbler & CONDITIONING)) {
@@ -112,6 +114,10 @@ int main(){
         } else if (time == 0) kelvin = 5000;
         cout << endl;
         //statePrint();
+        time ++;
+        if (time > 24) {
+            time = 0;
+        }
         console.clear();
     }
     return 0;
