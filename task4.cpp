@@ -13,19 +13,13 @@ enum note{
 };
 int main(){
     std::string melody;
-    /*
+
     for(int i = 0; i < 3; i++){
         std::string user;
         std::cin >> user;
         melody += user;
         if (i < 2) melody += " ";
     }
-    for (int i = 0; i < melody.size(); i++){
-
-    }
-    */
-    std::string text = "124";
-    int s = text[0] - '0';
-    std::cout << s;
+    std::cout << melody;
     return 0;
 }

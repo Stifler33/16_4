@@ -1,39 +1,27 @@
 #include <iostream>
+#include <string>
+#include <cstdlib>
 using namespace std;
-enum swith {
-    HOME = 1,
-    SOCKETS=2,
-    CONDITIONING=4,
-    HEATING=8
+enum musik{
+    C=1,
+    D=2,
+    E=4,
+    F=8,
+    G=16,
+    A=32,
+    H=64
 };
-void printStatus(int& status){
-    if (status & HOME){
-        cout << " Home ON " ;
-    }
-    if (status & SOCKETS){
-        cout << " Sockets ON " ;
-    }
-    if (status & CONDITIONING){
-        cout << " CONDITIONING ON " ;
-    }
-    if (status & HEATING){
-        cout << " HEATING ON " ;
-    }
-    cout << endl;
-}
 int main(){
-    int status = 0;
-    status |= HOME;
-    //status |= HEATING;
-    printStatus(status);
-    status &= ~HOME;
-    if (!(status & HEATING)){
-        cout << "yes !!";
+    string set = "1142253";
+
+    int melody = 0;
+    for (int i = 0; i < set.size(); i++){
+        melody += stoi(set,);
+        //string c = "";
+        //c += set[i];
+        //melody += stoi(c);
+        //melody += 1<<note;
     }
-    printStatus(status);
-    status &= ~HEATING;
-    if (!(status & HEATING)){
-        cout << "yes !!";
-    }
+    cout << melody;
     return 0;
 }

@@ -3,4 +3,4 @@ project(16_4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(16_4 task5.cpp)
+add_executable(16_4 task2.cpp)

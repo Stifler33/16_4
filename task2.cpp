@@ -10,8 +10,7 @@ int main(){
     buffer << number;
     cin >> number;
     buffer << '.' << number;
-    cout << buffer.str() << endl;
-    //buffer >> result;
+    buffer >> result;
     cout << result ;
     return 0;
 }
